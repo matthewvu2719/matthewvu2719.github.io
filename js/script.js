@@ -1,35 +1,43 @@
 $(window).on("load", function() {
+	// Loader with fallback timeout
+	setTimeout(function() {
+		$(".loader").fadeOut(750);
+	}, 2000);
 
 	$(".loader .inner").fadeOut(500, function() {
 		$(".loader").fadeOut(750);
 	});
 
+	// Disable Isotope - using CSS grid instead
+	/*
 	$(".items").isotope({ 
-	filter: '*',
-	animationOptions: {
-		duration: 1500,
-		easing: 'linear',
-		queue: false
-	}
-});
-
+		filter: '*',
+		animationOptions: {
+			duration: 1500,
+			easing: 'linear',
+			queue: false
+		}
+	});
+	*/
 })
 
 
 
 
 $(document).ready(function(){
+/*
 $('#slides').superslides({
 	animation: 'fade',
 	play: 5000,
 	pagination: false
 });
+*/
 
-var typed = new Typed(".typed",{
-	strings: ["Software Developer.", "Game Developer.", "Full Stack Developer.", "Student."],
+var typed = new Typed(".typed-text",{
+	strings: [ "game developer", "full stack developer"],
 	typeSpeed: 70,
 	loop: true,
-	startDelay: 1000,
+	startDelay: 500,
 	showCursor: false
 });
 
