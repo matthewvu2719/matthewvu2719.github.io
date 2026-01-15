@@ -366,11 +366,6 @@ body {
   cursor: pointer;
 }
 
-.project-card:has(.project-links a:hover) {
-  border-color: var(--text);
-  z-index: 1;
-}
-
 .project-card:hover {
   background: var(--bg);
   border-color: var(--text);
