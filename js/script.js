@@ -135,6 +135,9 @@ function stickyNavigation() {
 
 
 // Project Modal Functions
+let currentSlide = 0;
+let totalSlides = 0;
+
 function openProjectModal(data) {
   const modal = document.getElementById('projectModal');
   const modalMedia = document.getElementById('modalMedia');
@@ -142,9 +145,53 @@ function openProjectModal(data) {
   const modalDescription = document.getElementById('modalDescription');
   const modalTechAndLinks = document.getElementById('modalTechAndLinks');
 
-  // Set media (video or image)
-  if (data.video) {
-    modalMedia.innerHTML = `<video autoplay muted loop playsinline controls><source src="${data.video}" type="video/mp4"></video>`;
+  currentSlide = 0;
+
+  // Set media (slideshow, video, or image)
+  if (data.slides && data.slides.length > 0) {
+    totalSlides = data.slides.length;
+    let slideshowHTML = '<div class="project-modal-slideshow">';
+    
+    data.slides.forEach((slide, index) => {
+      const activeClass = index === 0 ? 'active' : '';
+      if (slide.endsWith('.mp4')) {
+        slideshowHTML += `<div class="project-modal-slide ${activeClass}">
+          <video autoplay muted loop playsinline>
+            <source src="${slide}" type="video/mp4">
+          </video>
+          <button class="video-sound-toggle" onclick="toggleSound(event)">
+            <i class="fas fa-volume-mute"></i>
+          </button>
+        </div>`;
+      } else {
+        slideshowHTML += `<div class="project-modal-slide ${activeClass}"><img src="${slide}" alt="Slide ${index + 1}"></div>`;
+      }
+    });
+    
+    if (totalSlides > 1) {
+      slideshowHTML += '<button class="project-modal-nav project-modal-nav-prev" onclick="changeSlide(-1)">‹</button>';
+      slideshowHTML += '<button class="project-modal-nav project-modal-nav-next" onclick="changeSlide(1)">›</button>';
+      
+      // Add dots indicator
+      slideshowHTML += '<div class="project-modal-dots">';
+      for (let i = 0; i < totalSlides; i++) {
+        const dotClass = i === 0 ? 'active' : '';
+        slideshowHTML += `<span class="dot ${dotClass}"></span>`;
+      }
+      slideshowHTML += '</div>';
+    }
+    
+    slideshowHTML += '</div>';
+    modalMedia.innerHTML = slideshowHTML;
+  } else if (data.video) {
+    modalMedia.innerHTML = `<div style="position: relative;">
+      <video autoplay muted loop playsinline>
+        <source src="${data.video}" type="video/mp4">
+      </video>
+      <button class="video-sound-toggle" onclick="toggleSound(event)">
+        <i class="fas fa-volume-mute"></i>
+      </button>
+    </div>`;
   } else if (data.image) {
     modalMedia.innerHTML = `<img src="${data.image}" alt="${data.title}">`;
   }
@@ -171,6 +218,64 @@ function openProjectModal(data) {
   // Show modal
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+}
+
+function toggleSound(event) {
+  event.stopPropagation();
+  const button = event.currentTarget;
+  const slide = button.closest('.project-modal-slide') || button.parentElement;
+  const video = slide.querySelector('video');
+  const icon = button.querySelector('i');
+  
+  if (video.muted) {
+    video.muted = false;
+    icon.className = 'fas fa-volume-up';
+  } else {
+    video.muted = true;
+    icon.className = 'fas fa-volume-mute';
+  }
+}
+
+function changeSlide(direction) {
+  const slides = document.querySelectorAll('.project-modal-slide');
+  const dots = document.querySelectorAll('.dot');
+  
+  slides[currentSlide].classList.remove('active');
+  if (dots[currentSlide]) {
+    dots[currentSlide].classList.remove('active');
+  }
+  
+  currentSlide += direction;
+  
+  if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  } else if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  }
+  
+  slides[currentSlide].classList.add('active');
+  if (dots[currentSlide]) {
+    dots[currentSlide].classList.add('active');
+  }
+  
+  // Reset all videos to muted and update icons
+  slides.forEach((slide, index) => {
+    const video = slide.querySelector('video');
+    const button = slide.querySelector('.video-sound-toggle');
+    const icon = button ? button.querySelector('i') : null;
+    
+    if (video) {
+      video.muted = true;
+      if (icon) {
+        icon.className = 'fas fa-volume-mute';
+      }
+      if (index === currentSlide) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  });
 }
 
 function closeProjectModal() {

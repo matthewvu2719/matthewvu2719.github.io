@@ -263,6 +263,12 @@ body {
   border: 1px solid var(--border);
   padding: 20px;
   box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.experience-panel:hover {
+  border-color: var(--text);
+  transform: scale(1.02);
 }
 
 .experience-item {
@@ -598,6 +604,12 @@ body {
   border: 1px solid var(--border);
   padding: 20px;
   box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.education-panel:hover {
+  border-color: var(--text);
+  transform: scale(1.02);
 }
 
 .education-item {
@@ -798,5 +810,109 @@ body {
 }
 
 .project-modal-link:hover {
+  color: var(--text);
+}
+
+/* Slideshow Navigation */
+.project-modal-slideshow {
+  position: relative;
+  width: 100%;
+  background: #000;
+}
+
+.project-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 32px;
+  z-index: 1;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.project-modal-nav:hover {
+  color: var(--text);
+}
+
+.project-modal-nav-prev {
+  left: 20px;
+}
+
+.project-modal-nav-next {
+  right: 20px;
+}
+
+.project-modal-slide {
+  display: none;
+  width: 100%;
+}
+
+.project-modal-slide.active {
+  display: block;
+}
+
+.project-modal-slide video,
+.project-modal-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-modal-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  z-index: 2;
+}
+
+.dot {
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.dot::before {
+  content: "·";
+}
+
+.dot.active::before {
+  content: "_";
+}
+
+/* Video Sound Toggle Button */
+.video-sound-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 2;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.video-sound-toggle:hover {
   color: var(--text);
 }
