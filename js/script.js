@@ -298,6 +298,21 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// Forward scroll events from modal background to modal content
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('projectModal');
+  
+  modal.addEventListener('wheel', function(e) {
+    const modalContent = document.querySelector('.project-modal-content');
+    if (modalContent && modal.classList.contains('active')) {
+      // Prevent default scroll on the modal background
+      e.preventDefault();
+      // Forward the scroll to the modal content
+      modalContent.scrollTop += e.deltaY;
+    }
+  }, { passive: false });
+});
+
 // Close modal on ESC key
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {

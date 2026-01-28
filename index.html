@@ -46,6 +46,33 @@
         
         <div class="projects-grid">
           <div class="project-card web" onclick="openProjectModal({
+                    title: 'Admittree',
+                    description: 'A centralized hub for Canadian university programs admission, which feature specialized and personalized roadmap with an actionable checklist and an AI consultant',
+                    slides: ['img/admittree1.mp4', 'img/admittree2.mp4', 'img/admittree3.mp4','img/admittree4.mp4', 'img/admittree5.mp4', 'img/admittree6.mp4','img/admittree7.mp4'],
+                    tech: ['mongodb', 'python', 'react', 'flask', 'digitalocean'],
+                    demo: 'https://github.com/matthewvu2719/admit-tree/tree/consultant',
+                    github: 'https://github.com/matthewvu2719/admit-tree/tree/consultant'
+                  })">
+            <video autoplay muted loop playsinline>
+              <source src="img/admittree8.mp4" type="video/mp4">
+            </video>
+            <div class="project-info">
+              <div class="project-footer">
+                <div class="tech-tags">
+                  <span>mongodb</span>
+                  <span>python</span>
+                  <span>react</span>
+                  <span>flask</span>
+                  <span>digitalocean</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/matthewvu2719/admit-tree/tree/consultant" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
+                  <a href="https://github.com/matthewvu2719/admit-tree/tree/consultant" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card web" onclick="openProjectModal({
                     title: 'Journey',
                     description: 'A gamified habit tracker with an AI-powered companion named Bobo that helps users build consistent habits through intelligent obstacle detection, personalized solutions, and achievement-based rewards. Features real-time analytics, smart friction removal, chat bot',
                     slides: ['img/bobo1.mp4', 'img/bobo2.mp4', 'img/bobo3.mp4','img/bobo4.mp4', 'img/bobo5.mp4', 'img/bobo6.mp4','img/bobo7.mp4', 'img/bobo8.mp4'],
