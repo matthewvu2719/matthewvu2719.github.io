@@ -763,7 +763,7 @@ body {
 }
 
 .project-modal-title {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -772,7 +772,7 @@ body {
 }
 
 .project-modal-description {
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.5;
   color: var(--text);
   margin-bottom: 12px;
@@ -794,7 +794,7 @@ body {
 }
 
 .project-modal-tech span {
-  font-size: 13px;
+  font-size: 15px;
   padding: 0;
   background: transparent;
   border: none;

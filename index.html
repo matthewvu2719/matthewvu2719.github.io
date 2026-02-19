@@ -46,6 +46,56 @@
         
         <div class="projects-grid">
           <div class="project-card web" onclick="openProjectModal({
+                    title: 'TestQuest!',
+                    description: 'A gamified study with me web app. User can study using pomodoro sessions, AI generated quizzes and answers, and earn rewards which will be used in the 2D platformer game',
+                    slides: ['img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4','img/testQuest4.mp4','img/testQuest5.mp4' ],
+                    tech: ['react', 'nodejs', 'c#', 'unity'],
+                    demo: 'https://github.com/matthewvu2719/TestQuest',
+                    github: 'https://github.com/matthewvu2719/TestQuest'
+                  })">
+            <video autoplay muted loop playsinline>
+              <source src="img/testQuest1.mp4" type="video/mp4">
+            </video>
+            <div class="project-info">
+              <div class="project-footer">
+                <div class="tech-tags">
+                  <span>react</span>
+                  <span>nodejs</span>
+                  <span>c#</span>
+                  <span>unity</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/matthewvu2719/TestQuest" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
+                  <a href="https://github.com/matthewvu2719/TestQuest" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card game" onclick="openProjectModal({
+                    title: 'Adventure Time',
+                    description: 'This project is a 2D platformer',
+                    slides: ['img/adventureTime1.mp4','img/adventureTime2.mp4','img/adventureTime3.mp4','img/adventureTime4.mp4','img/adventureTime5.mp4'],
+                    tech: ['unity', 'c#'],
+                    github: 'https://github.com/matthewvu2719/AdventureTime'
+                  })">
+            <video autoplay muted loop playsinline>
+              <source src="img/adventureTime5.mp4" type="video/mp4">
+              <!-- <img src="img/1.png" alt="Future Shock 2099" /> -->
+            </video>
+            <div class="project-info">
+              <div class="project-footer">
+                <div class="tech-tags">
+                  <span>unity</span>
+                  <span>c#</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://matthewvu.itch.io/adventure-time" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
+                  <a href="https://github.com/matthewvu2719/AdventureTime" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card web" onclick="openProjectModal({
                     title: 'Admittree',
                     description: 'A centralized hub for Canadian university programs admission, which feature specialized and personalized roadmap with an actionable checklist and an AI consultant',
                     slides: ['img/admittree1.mp4', 'img/admittree2.mp4', 'img/admittree3.mp4','img/admittree4.mp4', 'img/admittree5.mp4', 'img/admittree6.mp4','img/admittree7.mp4'],
@@ -72,6 +122,9 @@
               </div>
             </div>
           </div>
+          
+          
+
           <div class="project-card web" onclick="openProjectModal({
                     title: 'Journey',
                     description: 'A gamified habit tracker with an AI-powered companion named Bobo that helps users build consistent habits through intelligent obstacle detection, personalized solutions, and achievement-based rewards. Features real-time analytics, smart friction removal, chat bot',
@@ -81,7 +134,7 @@
                     github: 'https://github.com/matthewvu2719/Journey'
                   })">
             <video autoplay muted loop playsinline>
-              <source src="img/bobo1.mp4" type="video/mp4">
+              <source src="img/bobo.mp4" type="video/mp4">
               <img src="img/30.png" alt="Journey with bobo" />
             </video>
             <div class="project-info">
@@ -148,6 +201,8 @@
               </div>
             </div>
           </div>
+
+          
 
           <!-- <div class="project-card game">
             <img src="img/4.png" alt="Dead Rising" />
