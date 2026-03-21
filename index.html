@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hieu Vu - Software Developer</title>
+    <!-- fix: typing make components move when cursor switch, turn off sound when clicking outside -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -42,9 +43,34 @@
     <!-- Projects -->
     <section id="portfolio" class="section">
       <div class="container">
-
-        
         <div class="projects-grid">
+          <div class="project-card web" onclick="openProjectModal({
+                    title: 'Sheep Guard',
+                    description: 'This Chrome extension is more than a site blocker - it\'s a companion that understands you. Whether you\'re managing ADHD, battling procrastination, or simply trying to stay focused, Sheep Guard adapts to your unique needs with AI-powered personalization and a rewarding gamification system that makes discipline feel achievable.',
+                    slides: ['img/sheepguard1.mp4','img/sheepguard2.mp4','img/sheepguard3.mp4','img/sheepguard4.mp4','img/sheepguard5.mp4','img/sheepguard6.mp4'],
+                    tech: ['threejs', 'vite', 'supabase', 'vercel'],
+                    demo: 'https://sheep-guard.vercel.app/info',
+                    // demo: 'https://github.com/matthewvu2719/TestQuest'
+                  })">
+            <video autoplay muted loop playsinline>
+              <source src="img/sheepguard1.mp4" type="video/mp4">
+            </video>
+            <div class="project-info">
+              <div class="project-footer">
+                <div class="tech-tags">
+                  <span>threejs</span>
+                  <span>vite</span>
+                  <span>supabase</span>
+                  <span>vercel</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://sheep-guard.vercel.app/info" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
+                  <!-- <a href="https://github.com/matthewvu2719/TestQuest" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="project-card web" onclick="openProjectModal({
                     title: 'TestQuest!',
                     description: 'A gamified study with me web app. User can study using pomodoro sessions, AI generated quizzes and answers, and earn rewards which will be used in the 2D platformer game',
