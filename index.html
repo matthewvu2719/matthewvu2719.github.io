@@ -45,6 +45,33 @@
       <div class="container">
         <div class="projects-grid">
           <div class="project-card web" onclick="openProjectModal({
+                    title: 'Ren',
+                    description: 'Ren turns your new tab into a sushi restaurant that evolves with your habits. Compete with global users or your friends. Log daily habits to grow your streak, unlock restaurant upgrades, and fill your dining room with guests.',
+                    slides: ['img/ren1.mp4','img/ren2.mp4','img/ren5.mp4','img/ren3.mp4','img/ren4.mp4','img/ren6.mp4'],
+                    tech: ['threejs', 'vite', 'supabase', 'vercel'],
+                    demo: 'https://ren-habit.vercel.app/',
+                    // demo: 'https://github.com/matthewvu2719/TestQuest'
+                  })">
+            <video autoplay muted loop playsinline>
+              <source src="img/ren.mp4" type="video/mp4">
+            </video>
+            <div class="project-info">
+              <div class="project-footer">
+                <div class="tech-tags">
+                  <span>nextjs</span>
+                  <span>react</span>
+                  <span>zustand</span>
+                  <span>supabase</span>
+                  <span>gemini</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://ren-habit.vercel.app/" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
+                  <!-- <a href="https://github.com/matthewvu2719/TestQuest" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card web" onclick="openProjectModal({
                     title: 'Sheep Guard',
                     description: 'This Chrome extension is more than a site blocker - it\'s a companion that understands you. Whether you\'re managing ADHD, battling procrastination, or simply trying to stay focused, Sheep Guard adapts to your unique needs with AI-powered personalization and a rewarding gamification system that makes discipline feel achievable.',
                     slides: ['img/sheepguard1.mp4','img/sheepguard2.mp4','img/sheepguard3.mp4','img/sheepguard4.mp4','img/sheepguard5.mp4','img/sheepguard6.mp4'],
