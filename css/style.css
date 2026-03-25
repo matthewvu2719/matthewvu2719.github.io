@@ -146,7 +146,8 @@ body {
   text-transform: lowercase;
   letter-spacing: 0.05em;
   margin-bottom: 16px;
-  min-height: 18px;
+  line-height: 1.5;
+  min-height: 21px;
 }
 
 .hero-links {
