@@ -143,16 +143,15 @@ body {
 
 .panel-tab {
   background: none;
-  border: 1px solid var(--border);
+  border: none;
   color: var(--text-muted);
   font-family: inherit;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 4px 10px;
+  padding: 4px 6px;
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-  margin-left: -1px;
+  transition: color 0.2s;
 }
 
 .panel-tab:hover {
@@ -161,10 +160,6 @@ body {
 
 .panel-tab.active {
   color: var(--text);
-  border-color: var(--text);
-  background: var(--bg);
-  z-index: 1;
-  position: relative;
 }
 
 .hero-title {
