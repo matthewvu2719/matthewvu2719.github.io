@@ -134,6 +134,15 @@ function stickyNavigation() {
 
 
 
+// Tab switching
+function switchTab(tab) {
+  document.getElementById('tab-projects').style.display = tab === 'projects' ? '' : 'none';
+  document.getElementById('tab-experience').style.display = tab === 'experience' ? '' : 'none';
+  document.querySelectorAll('.panel-tab').forEach(function(btn) {
+    btn.classList.toggle('active', btn.textContent.trim() === tab);
+  });
+}
+
 // Project Modal Functions
 let currentSlide = 0;
 let totalSlides = 0;

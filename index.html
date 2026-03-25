@@ -17,6 +17,10 @@
     <!-- Hero -->
     <section id="hero">
       <div class="hero-content">
+        <div class="panel-tabs">
+          <button class="panel-tab active" onclick="switchTab('projects')">projects</button>
+          <button class="panel-tab" onclick="switchTab('experience')">experience</button>
+        </div>
         <h1 class="hero-title">Matthew Vu</h1>
         <p class="hero-subtitle typed-text"></p>
         <div class="hero-links">
@@ -40,7 +44,8 @@
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Tab: Projects -->
+    <div id="tab-projects">
     <section id="portfolio" class="section">
       <div class="container">
         <div class="projects-grid">
@@ -421,11 +426,16 @@
         </div>
       </div>
     </section>
+    </div><!-- end #tab-projects -->
+
+    <!-- Tab: Experience -->
+    <div id="tab-experience" style="display:none">
 
     <!-- Education -->
     <section id="education" class="section">
       <div class="container">
         <div class="education-panel">
+          <p class="panel-section-title">Education</p>
           <div class="education-item">
             <div class="education-header">
               <h3>Bachelor of Science in Computer Science</h3>
@@ -455,6 +465,7 @@
     <section id="experience" class="section">
       <div class="container">
         <div class="experience-panel">
+          <p class="panel-section-title">Work</p>
           <div class="experience-item">
             <div class="experience-header">
               <h3>Software Developer</h3>
@@ -490,6 +501,7 @@
         </div>
       </div>
     </section>
+    </div><!-- end #tab-experience -->
 
     <!-- Project Modal -->
     <div class="project-modal" id="projectModal">

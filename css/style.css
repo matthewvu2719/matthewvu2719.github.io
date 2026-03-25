@@ -130,6 +130,41 @@ body {
   max-width: var(--content-width);
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+}
+
+.panel-tabs {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 0;
+}
+
+.panel-tab {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  margin-left: -1px;
+}
+
+.panel-tab:hover {
+  color: var(--text);
+}
+
+.panel-tab.active {
+  color: var(--text);
+  border-color: var(--text);
+  background: var(--bg);
+  z-index: 1;
+  position: relative;
 }
 
 .hero-title {
@@ -252,6 +287,7 @@ body {
 /* Experience */
 #experience {
   padding: 0 var(--page-pad) 80px;
+  /* top padding intentionally 0 — flush against education panel */
   display: flex;
   justify-content: center;
 }
@@ -265,14 +301,11 @@ body {
 .experience-panel {
   background: var(--panel-bg);
   border: 1px solid var(--border);
+  margin-top: -1px;
   padding: 20px;
   box-sizing: border-box;
   transition: all 0.2s;
-}
-
-.experience-panel:hover {
-  border-color: var(--text);
-  transform: scale(1.02);
+  position: relative;
 }
 
 .experience-item {
@@ -595,7 +628,7 @@ body {
 
 /* Education */
 #education {
-  padding: 0 var(--page-pad) 80px;
+  padding: 0 var(--page-pad) 0;
   display: flex;
   justify-content: center;
 }
@@ -616,7 +649,24 @@ body {
 
 .education-panel:hover {
   border-color: var(--text);
-  transform: scale(1.02);
+  position: relative;
+  z-index: 1;
+}
+
+.experience-panel:hover {
+  border-color: var(--text);
+  z-index: 1;
+}
+
+.panel-section-title {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
 .education-item {
