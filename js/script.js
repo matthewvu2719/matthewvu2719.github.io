@@ -52,21 +52,21 @@ document.addEventListener('DOMContentLoaded', function () {
 var projects = [
   {
     title: 'Ren',
-    desc: 'Ren turns your new tab into a sushi restaurant that evolves with your habits. Compete globally, log daily habits, grow your streak, unlock upgrades, and fill your dining room with guests.',
+    desc: 'Ren turns your new tab into a sushi restaurant that evolves with your habits. Compete with global users or your friends. Log daily habits to grow your streak, unlock restaurant upgrades, and fill your dining room with guests.',
     slides: ['img/ren1.mp4','img/ren2.mp4','img/ren5.mp4','img/ren3.mp4','img/ren4.mp4','img/ren6.mp4'],
     tech: ['nextjs','react','zustand','supabase','gemini'],
     demo: 'https://ren-habit.vercel.app/'
   },
   {
     title: 'Sheep Guard',
-    desc: 'AI-powered Chrome extension that blocks distracting sites and adapts to your focus patterns. Built for people managing ADHD, procrastination, or deep work sessions.',
+    desc: 'This Chrome extension is more than a site blocker - it\'s a companion that understands you. Whether you\'re managing ADHD, battling procrastination, or simply trying to stay focused, Sheep Guard adapts to your unique needs with AI-powered personalization and a rewarding gamification system.',
     slides: ['img/sheepguard1.mp4','img/sheepguard2.mp4','img/sheepguard3.mp4','img/sheepguard4.mp4','img/sheepguard5.mp4'],
     tech: ['threejs','vite','supabase','vercel'],
     demo: 'https://sheep-guard.vercel.app/info'
   },
   {
     title: 'Admittree',
-    desc: 'Centralized hub for Canadian university program admissions featuring personalized roadmaps, actionable checklists, and an AI consultant.',
+    desc: 'A centralized hub for Canadian university programs admission, which feature specialized and personalized roadmap with an actionable checklist and an AI consultant.',
     slides: ['img/admittree1.mp4','img/admittree2.mp4','img/admittree3.mp4','img/admittree4.mp4'],
     tech: ['mongodb','python','react','flask','digitalocean'],
     demo: 'https://github.com/matthewvu2719/admit-tree/tree/consultant',
@@ -74,7 +74,7 @@ var projects = [
   },
   {
     title: 'Journey',
-    desc: 'Gamified habit tracker with AI companion Bobo. Intelligent obstacle detection, personalized solutions, real-time analytics, achievement-based rewards.',
+    desc: 'A gamified habit tracker with an AI-powered companion named Bobo that helps users build consistent habits through intelligent obstacle detection, personalized solutions, and achievement-based rewards. Features real-time analytics, smart friction removal, chat bot.',
     slides: ['img/bobo1.mp4','img/bobo2.mp4','img/bobo3.mp4','img/bobo4.mp4'],
     tech: ['supabase','python','react','fastapi','groq'],
     demo: 'https://github.com/matthewvu2719/Journey',
@@ -82,7 +82,7 @@ var projects = [
   },
   {
     title: 'TestQuest!',
-    desc: 'Gamified study app with Pomodoro sessions, AI-generated quizzes, and a 2D Unity platformer you unlock with earned rewards.',
+    desc: 'A gamified study with me web app. User can study using pomodoro sessions, AI generated quizzes and answers, and earn rewards which will be used in the 2D platformer game.',
     slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4'],
     tech: ['react','nodejs','c#','unity','webgl'],
     demo: 'https://test-quest-zeta.vercel.app',
@@ -90,7 +90,7 @@ var projects = [
   },
   {
     title: 'Lucid Souls',
-    desc: 'Immersive lucid dreaming simulation in Unreal Engine. Multi-level lucidity progression with dynamic perspective changing and real-time object manipulation.',
+    desc: 'Immersive lucid dreaming simulation exploring psychological dream awareness. Features multi-level lucidity progression from sub-lucid to fully lucid states with dynamic perspective changing and real-time object manipulation.',
     slides: ['img/lucidsouls1.mp4','img/lucidsouls2.mp4','img/lucidsouls3.mp4','img/lucidsouls4.mp4'],
     tech: ['unreal engine','c++'],
     github: 'https://github.com/matthewvu2719/LucidSouls/tree/MatthewBranch'
@@ -105,7 +105,7 @@ var projects = [
   },
   {
     title: 'Future Shock 2099',
-    desc: 'Online multiplayer shooter using Photon. Players host rooms and compete in real-time.',
+    desc: 'This project is an online multiplayer shooting game. Players can create name, host, find and join rooms to play with other players in real time.',
     slides: ['img/futureshock1.mp4','img/futureshock2.mp4'],
     tech: ['unity','c#','photon'],
     demo: 'https://matthewvu.itch.io/future-shock-2099',
@@ -113,7 +113,7 @@ var projects = [
   },
   {
     title: 'MR Patient',
-    desc: 'Mixed reality patient registration for HoloLens 2. Connects to Vitaliti devices to read patient vitals in real-time.',
+    desc: 'This project is a mixed reality application using Hololens 2. User can register patient and connect to vitaliti devices to read patient\'s vitals.',
     slides: ['img/hololens1.mp4','img/hololens2.mp4'],
     tech: ['unity','c#','hololens'],
     github: 'https://github.com/matthewvu2719/MR-Patient'
@@ -122,7 +122,7 @@ var projects = [
     title: 'ShopFun POS',
     desc: 'Full-featured market POS system with user auth, cart management, checkout, inventory CRUD, and complete transaction recording.',
     slides: [],
-    image: 'img/5.png',
+    image: 'img/6.png',
     tech: ['mongodb','express','react','node.js'],
     github: 'https://github.com/matthewvu2719/ShopFun-POS'
   }
@@ -143,8 +143,8 @@ function openModal(idx) {
   }).join('');
 
   var lh = '';
-  if (p.demo)   lh += '<a class="modal-link primary" href="' + p.demo + '" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i> View Live</a>';
-  if (p.github) lh += '<a class="modal-link secondary" href="' + p.github + '" target="_blank"><i class="fab fa-github"></i> GitHub</a>';
+  if (p.demo)   lh += '<a class="modal-link primary" href="' + p.demo + '" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i></a>';
+  if (p.github) lh += '<a class="modal-link secondary" href="' + p.github + '" target="_blank"><i class="fab fa-github"></i></a>';
   document.getElementById('modal-links').innerHTML = lh;
 
   // Media

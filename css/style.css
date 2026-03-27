@@ -182,7 +182,7 @@ body {
   will-change: transform;
 }
 .project-card:hover .card-media-inner {
-  transform: scale(1.04) translateZ(0);
+  transform: scale(1) translateZ(0);
 }
 .card-media video,
 .card-media img {
