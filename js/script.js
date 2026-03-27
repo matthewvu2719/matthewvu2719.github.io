@@ -65,14 +65,14 @@ var projects = [
   {
     title: 'Sheep Guard',
     desc: 'This Chrome extension is more than a site blocker - it\'s a companion that understands you. Whether you\'re managing ADHD, battling procrastination, or simply trying to stay focused, Sheep Guard adapts to your unique needs with AI-powered personalization and a rewarding gamification system.',
-    slides: ['img/sheepguard1.mp4','img/sheepguard2.mp4','img/sheepguard3.mp4','img/sheepguard4.mp4','img/sheepguard5.mp4'],
+    slides: ['img/sheepguard1.mp4','img/sheepguard2.mp4','img/sheepguard3.mp4','img/sheepguard4.mp4','img/sheepguard5.mp4','img/sheepguard6.mp4'],
     tech: ['threejs','vite','supabase','vercel', 'gemini'],
     demo: 'https://sheep-guard.vercel.app/info'
   },
   {
     title: 'Admittree',
     desc: 'A centralized hub for Canadian university programs admission, which feature specialized and personalized roadmap with an actionable checklist and an AI consultant.',
-    slides: ['img/admittree1.mp4','img/admittree2.mp4','img/admittree3.mp4','img/admittree4.mp4'],
+    slides: ['img/admittree1.mp4','img/admittree2.mp4','img/admittree3.mp4','img/admittree4.mp4','img/admittree5.mp4','img/admittree6.mp4','img/admittree7.mp4','img/admittree8.mp4'],
     tech: ['mongodb','python','react','flask','digitalocean'],
     demo: 'https://github.com/matthewvu2719/admit-tree/tree/consultant',
     github: 'https://github.com/matthewvu2719/admit-tree/tree/consultant'
@@ -80,7 +80,7 @@ var projects = [
   {
     title: 'Journey',
     desc: 'A gamified habit tracker with an AI-powered companion named Bobo that helps users build consistent habits through intelligent obstacle detection, personalized solutions, and achievement-based rewards. Features real-time analytics, smart friction removal, chat bot.',
-    slides: ['img/bobo1.mp4','img/bobo2.mp4','img/bobo3.mp4','img/bobo4.mp4'],
+    slides: ['img/bobo1.mp4','img/bobo2.mp4','img/bobo3.mp4','img/bobo4.mp4','img/bobo5.mp4','img/bobo6.mp4','img/bobo7.mp4','img/bobo8.mp4'],
     tech: ['supabase','python','react','fastapi','groq','docker'],
     demo: 'https://github.com/matthewvu2719/Journey',
     github: 'https://github.com/matthewvu2719/Journey'
@@ -88,7 +88,7 @@ var projects = [
   {
     title: 'TestQuest!',
     desc: 'A gamified study with me web app for kids. User can study using pomodoro sessions, AI generated quizzes and answers, and earn rewards which will be used in the 2D platformer game.',
-    slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4'],
+    slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4','img/testQuest4.mp4','img/testQuest5.mp4'],
     tech: ['react','nodejs','c#','unity','webgl'],
     demo: 'https://test-quest-zeta.vercel.app',
     github: 'https://github.com/matthewvu2719/TestQuest'
@@ -96,14 +96,14 @@ var projects = [
   {
     title: 'Lucid Souls',
     desc: 'Immersive lucid dreaming simulation exploring psychological dream awareness. Features multi-level lucidity progression from sub-lucid to fully lucid states with dynamic perspective changing and real-time object manipulation.',
-    slides: ['img/lucidsouls1.mp4','img/lucidsouls2.mp4','img/lucidsouls3.mp4','img/lucidsouls4.mp4'],
+    slides: ['img/lucidsouls1.mp4','img/lucidsouls2.mp4','img/lucidsouls3.mp4','img/lucidsouls4.mp4','img/lucidsouls5.mp4'],
     tech: ['unreal engine','c++'],
     github: 'https://github.com/matthewvu2719/LucidSouls/tree/MatthewBranch'
   },
   {
     title: 'Adventure Time',
     desc: 'A 2D platformer built in Unity with C#.',
-    slides: ['img/adventureTime1.mp4','img/adventureTime2.mp4','img/adventureTime3.mp4'],
+    slides: ['img/adventureTime1.mp4','img/adventureTime2.mp4','img/adventureTime3.mp4','img/adventureTime4.mp4','img/adventureTime5.mp4'],
     tech: ['unity','c#'],
     demo: 'https://matthewvu.itch.io/adventure-time',
     github: 'https://github.com/matthewvu2719/AdventureTime'
