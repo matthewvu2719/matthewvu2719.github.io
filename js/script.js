@@ -27,13 +27,18 @@ tick(); setInterval(tick, 1000);
 
 // ── FILTER ──
 document.addEventListener('DOMContentLoaded', function () {
+  // default to web
+  document.querySelectorAll('.project-card').forEach(function (c) {
+    c.classList.toggle('hidden', c.dataset.cat !== 'web');
+  });
+
   document.querySelectorAll('.filter-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
       var f = btn.dataset.filter;
       document.querySelectorAll('.project-card').forEach(function (c) {
-        c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f);
+        c.classList.toggle('hidden', c.dataset.cat !== f);
       });
     });
   });
@@ -61,7 +66,7 @@ var projects = [
     title: 'Sheep Guard',
     desc: 'This Chrome extension is more than a site blocker - it\'s a companion that understands you. Whether you\'re managing ADHD, battling procrastination, or simply trying to stay focused, Sheep Guard adapts to your unique needs with AI-powered personalization and a rewarding gamification system.',
     slides: ['img/sheepguard1.mp4','img/sheepguard2.mp4','img/sheepguard3.mp4','img/sheepguard4.mp4','img/sheepguard5.mp4'],
-    tech: ['threejs','vite','supabase','vercel'],
+    tech: ['threejs','vite','supabase','vercel', 'gemini'],
     demo: 'https://sheep-guard.vercel.app/info'
   },
   {
@@ -76,7 +81,7 @@ var projects = [
     title: 'Journey',
     desc: 'A gamified habit tracker with an AI-powered companion named Bobo that helps users build consistent habits through intelligent obstacle detection, personalized solutions, and achievement-based rewards. Features real-time analytics, smart friction removal, chat bot.',
     slides: ['img/bobo1.mp4','img/bobo2.mp4','img/bobo3.mp4','img/bobo4.mp4'],
-    tech: ['supabase','python','react','fastapi','groq'],
+    tech: ['supabase','python','react','fastapi','groq','docker'],
     demo: 'https://github.com/matthewvu2719/Journey',
     github: 'https://github.com/matthewvu2719/Journey'
   },
