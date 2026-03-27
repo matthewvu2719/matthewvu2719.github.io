@@ -415,9 +415,12 @@ footer span { font-size: 10px; color: var(--muted); letter-spacing: 0.06em; }
 }
 .modal-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .modal-tags span {
-  font-size: 10px; color: var(--muted);
-  padding: 3px 10px; border: 1px solid var(--border-mid);
-  border-radius: 10px; letter-spacing: 0.04em;
+  font-size: 12px;        /* was 10px */
+  color: var(--text);     /* was var(--muted) */
+  padding: 4px 12px;      /* slightly more padding to match bigger text */
+  border: 1px solid var(--border-mid);
+  border-radius: 10px;
+  letter-spacing: 0.04em;
 }
 .modal-links { display: flex; flex-direction: row; gap: 8px; flex-shrink: 0; }
 .modal-right { display: none; }
