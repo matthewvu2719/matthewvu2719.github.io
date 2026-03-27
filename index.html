@@ -3,529 +3,276 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Matthew Vu - Software Developer</title>
-    <!-- fix: typing make components move when cursor switch, turn off sound when clicking outside -->
+    <title>Matthew Vu — Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="loader">
-      <div class="spinner"></div>
-    </div>
+    <div class="loader"><div class="spinner"></div></div>
 
-    <!-- Hero -->
+    <!-- NAV -->
+    <nav id="nav">
+      <a class="nav-brand" href="#">MATTHEW VU</a>
+      <div class="nav-center">
+        <a href="#hero" class="nav-link">Info</a>
+        <a href="#work" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="pdf/MatthewHieuVuResume.pdf" target="_blank" class="nav-link">Resume</a>
+      </div>
+      <div class="nav-right">
+        <!-- <span id="clock"></span> -->
+      </div>
+    </nav>
+
+    <!-- HERO -->
     <section id="hero">
-      <div class="hero-content">
-        <div class="panel-tabs">
-          <button class="panel-tab active" onclick="switchTab('projects')">projects</button>
-          <button class="panel-tab" onclick="switchTab('experience')">experience</button>
-        </div>
-        <h1 class="hero-title">Matthew Vu</h1>
-        <p class="hero-subtitle typed-text"></p>
+      <div class="hero-inner">
+        <img src="img/nerd_face_3d.png" alt="nerd" class="hero-avatar" onerror="this.style.display='none'">
+        <p class="hero-text">Hey there! I'm <strong>Matthew</strong>, a software engineer with experience in full-stack development and game development. I build web apps that solve real-world problems — from an AI sushi restaurant habit tracker to an AI-powered focus companion. Currently diving deeper into AI and open to new opportunities.</p>
         <div class="hero-links">
           <a href="mailto:matthewvu2719@gmail.com" class="hero-link">
-            <i class="fas fa-envelope"></i>
-            <span>matthewvu2719@gmail.com</span>
+            <i class="fas fa-envelope"></i> Email
           </a>
           <a href="https://github.com/matthewvu2719" target="_blank" class="hero-link">
-            <i class="fab fa-github"></i>
-            <span>@matthewvu2719</span>
+            <i class="fab fa-github"></i> GitHub
           </a>
           <a href="https://www.linkedin.com/in/matthew-hieu-vu/" target="_blank" class="hero-link">
-            <i class="fab fa-linkedin"></i>
-            <span>matthew-hieu-vu</span>
+            <i class="fab fa-linkedin"></i> LinkedIn
           </a>
           <a href="pdf/MatthewHieuVuResume.pdf" target="_blank" class="hero-link">
-            <i class="fas fa-file-alt"></i>
-            <span>resume</span>
+            <i class="fas fa-file-alt"></i> Résumé
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Tab: Projects -->
-    <div id="tab-projects">
-    <section id="portfolio" class="section">
-      <div class="container">
+    <!-- PROJECTS -->
+    <section id="work">
+      <div class="work-inner">
+        <div class="work-header">
+          <h2 class="work-label">My Projects</h2>
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="game">Game</button>
+            <button class="filter-btn" data-filter="xr">XR</button>
+          </div>
+        </div>
+
         <div class="projects-grid">
-          <div class="project-card web" onclick="openProjectModal({
-                    title: 'Ren',
-                    description: 'Ren turns your new tab into a sushi restaurant that evolves with your habits. Compete with global users or your friends. Log daily habits to grow your streak, unlock restaurant upgrades, and fill your dining room with guests.',
-                    slides: ['img/ren1.mp4','img/ren2.mp4','img/ren5.mp4','img/ren3.mp4','img/ren4.mp4','img/ren6.mp4'],
-                    tech: ['threejs', 'vite', 'supabase', 'vercel'],
-                    demo: 'https://ren-habit.vercel.app/',
-                    // demo: 'https://github.com/matthewvu2719/TestQuest'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/ren.mp4" type="video/mp4">
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>nextjs</span>
-                  <span>react</span>
-                  <span>zustand</span>
-                  <span>supabase</span>
-                  <span>gemini</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://ren-habit.vercel.app/" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
-                  <!-- <a href="https://github.com/matthewvu2719/TestQuest" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a> -->
-                </div>
+
+          <div class="project-card" data-cat="web" data-index="0">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/ren.mp4" type="video/mp4"></video>
               </div>
-            </div>
-          </div>
-          <div class="project-card web" onclick="openProjectModal({
-                    title: 'Sheep Guard',
-                    description: 'This Chrome extension is more than a site blocker - it\'s a companion that understands you. Whether you\'re managing ADHD, battling procrastination, or simply trying to stay focused, Sheep Guard adapts to your unique needs with AI-powered personalization and a rewarding gamification system that makes discipline feel achievable.',
-                    slides: ['img/sheepguard1.mp4','img/sheepguard2.mp4','img/sheepguard3.mp4','img/sheepguard4.mp4','img/sheepguard5.mp4','img/sheepguard6.mp4'],
-                    tech: ['threejs', 'vite', 'supabase', 'vercel'],
-                    demo: 'https://sheep-guard.vercel.app/info',
-                    // demo: 'https://github.com/matthewvu2719/TestQuest'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/sheepguard1.mp4" type="video/mp4">
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>threejs</span>
-                  <span>vite</span>
-                  <span>supabase</span>
-                  <span>vercel</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://sheep-guard.vercel.app/info" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
-                  <!-- <a href="https://github.com/matthewvu2719/TestQuest" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a> -->
-                </div>
+              <div class="card-overlay">
+                <span class="card-name">Ren</span>
+                <span class="card-arrow">›</span>
               </div>
             </div>
           </div>
 
-          
-          <div class="project-card web" onclick="openProjectModal({
-                    title: 'Admittree',
-                    description: 'A centralized hub for Canadian university programs admission, which feature specialized and personalized roadmap with an actionable checklist and an AI consultant',
-                    slides: ['img/admittree1.mp4', 'img/admittree2.mp4', 'img/admittree3.mp4','img/admittree4.mp4', 'img/admittree5.mp4', 'img/admittree6.mp4','img/admittree7.mp4'],
-                    tech: ['mongodb', 'python', 'react', 'flask', 'digitalocean'],
-                    demo: 'https://github.com/matthewvu2719/admit-tree/tree/consultant',
-                    github: 'https://github.com/matthewvu2719/admit-tree/tree/consultant'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/admittree8.mp4" type="video/mp4">
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>mongodb</span>
-                  <span>python</span>
-                  <span>react</span>
-                  <span>flask</span>
-                  <span>digitalocean</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/matthewvu2719/admit-tree/tree/consultant" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
-                  <a href="https://github.com/matthewvu2719/admit-tree/tree/consultant" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
+          <div class="project-card" data-cat="web" data-index="1">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/sheepguard1.mp4" type="video/mp4"></video>
               </div>
-            </div>
-          </div>
-          
-          
-
-          <div class="project-card web" onclick="openProjectModal({
-                    title: 'Journey',
-                    description: 'A gamified habit tracker with an AI-powered companion named Bobo that helps users build consistent habits through intelligent obstacle detection, personalized solutions, and achievement-based rewards. Features real-time analytics, smart friction removal, chat bot',
-                    slides: ['img/bobo1.mp4', 'img/bobo2.mp4', 'img/bobo3.mp4','img/bobo4.mp4', 'img/bobo5.mp4', 'img/bobo6.mp4','img/bobo7.mp4', 'img/bobo8.mp4'],
-                    tech: ['supabase', 'python', 'react', 'fastapi', 'groq'],
-                    demo: 'https://github.com/matthewvu2719/Journey',
-                    github: 'https://github.com/matthewvu2719/Journey'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/bobo.mp4" type="video/mp4">
-              <img src="img/30.png" alt="Journey with bobo" />
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>supabase</span>
-                  <span>python</span>
-                  <span>react</span>
-                  <span>fastapi</span>
-                  <span>groq</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/matthewvu2719/Journey" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
-                  <a href="https://github.com/matthewvu2719/Journey" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
+              <div class="card-overlay">
+                <span class="card-name">Sheep Guard</span>
+                <span class="card-arrow">›</span>
               </div>
             </div>
           </div>
 
-          <div class="project-card web" onclick="openProjectModal({
-                    title: 'TestQuest!',
-                    description: 'A gamified study with me web app. User can study using pomodoro sessions, AI generated quizzes and answers, and earn rewards which will be used in the 2D platformer game',
-                    slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4','img/testQuest4.mp4','img/testQuest5.mp4' ],
-                    tech: ['react', 'nodejs', 'c#', 'unity','webgl'],
-                    demo: 'https://test-quest-zeta.vercel.app',
-                    github: 'https://github.com/matthewvu2719/TestQuest'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/testQuest4.mp4" type="video/mp4">
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>react</span>
-                  <span>nodejs</span>
-                  <span>c#</span>
-                  <span>unity</span>
-                  <span>webgl</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://test-quest-zeta.vercel.app" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
-                  <a href="https://github.com/matthewvu2719/TestQuest" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
+          <div class="project-card" data-cat="web" data-index="2">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/admittree8.mp4" type="video/mp4"></video>
               </div>
-            </div>
-          </div>
-          <div class="project-card game" onclick="openProjectModal({
-                    title: 'Adventure Time',
-                    description: 'This project is a 2D platformer',
-                    slides: ['img/adventureTime1.mp4','img/adventureTime2.mp4','img/adventureTime3.mp4','img/adventureTime4.mp4','img/adventureTime5.mp4'],
-                    tech: ['unity', 'c#'],
-                    github: 'https://github.com/matthewvu2719/AdventureTime'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/adventureTime5.mp4" type="video/mp4">
-              <!-- <img src="img/1.png" alt="Future Shock 2099" /> -->
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>unity</span>
-                  <span>c#</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://matthewvu.itch.io/adventure-time" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
-                  <a href="https://github.com/matthewvu2719/AdventureTime" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card game" onclick="openProjectModal({
-                    title: 'Lucid Souls',
-                    description: 'Immersive lucid dreaming simulation exploring psychological dream awareness. Features multi-level lucidity progression from sub-lucid to fully lucid states with dynamic perspective changing and real-time object manipulation',
-                    slides: ['img/lucidsouls1.mp4', 'img/lucidsouls2.mp4','img/lucidsouls3.mp4','img/lucidsouls4.mp4','img/lucidsouls5.mp4'],
-                    tech: ['unreal engine', 'c++'],
-                    github: 'https://github.com/matthewvu2719/LucidSouls/tree/MatthewBranch'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/lucidsouls2.mp4" type="video/mp4">
-              <img src="img/41.png" alt="Lucid Souls" />
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>unreal engine</span>
-                  <span>c++</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/matthewvu2719/LucidSouls/tree/MatthewBranch" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card game" onclick="openProjectModal({
-                    title: 'Future Shock 2099',
-                    description: 'This project is an online multiplayer shooting game. Players can create name, host, find and join rooms to play with other players',
-                    slides: ['img/futureshock1.mp4','img/futureshock2.mp4'],
-                    tech: ['unity', 'c#', 'photon'],
-                    github: 'https://github.com/matthewvu2719/Future-Shock-2099'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/futureshock2.mp4" type="video/mp4">
-              <img src="img/1.png" alt="Future Shock 2099" />
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>unity</span>
-                  <span>c#</span>
-                  <span>photon</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://matthewvu.itch.io/future-shock-2099" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-link"></i></a>
-                  <a href="https://github.com/matthewvu2719/Future-Shock-2099" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
+              <div class="card-overlay">
+                <span class="card-name">Admittree</span>
+                <span class="card-arrow">›</span>
               </div>
             </div>
           </div>
 
-          
-
-          <!-- <div class="project-card game">
-            <img src="img/4.png" alt="Dead Rising" />
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>unity</span>
-                  <span>c#</span>
-                </div>
-                <div class="project-links">
-                  <a href="javascript:void(0)" onclick="openProjectModal({
-                    title: 'Dead Rising',
-                    description: 'This project is a third-person-shooter game. The zombies will chase and attack players within its vision radius. Player must achieve objectives to complete the game',
-                    image: 'img/4.png',
-                    tech: ['unity', 'c#'],
-                    github: 'https://github.com/matthewvu2719/Dead-Rising'
-                  })"><i class="fas fa-eye"></i></a>
-                  <a href="https://github.com/matthewvu2719/Dead-Rising" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
+          <div class="project-card" data-cat="web" data-index="3">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/bobo.mp4" type="video/mp4"></video>
               </div>
-            </div>
-          </div> -->
-          <div class="project-card xr" onclick="openProjectModal({
-                    title: 'MR Patient',
-                    description: 'This project is a mixed reality application that features patient registration workflow. It is developed and run using Hololens 2. User can register patient and connect to vitaliti devices to read patient\'s vitals',
-                    slides: ['img/hololens1.mp4', 'img/hololens2.mp4'],
-                    tech: ['unity', 'c#', 'hololens'],
-                    github: 'https://github.com/matthewvu2719/MR-Patient'
-                  })">
-            <video autoplay muted loop playsinline>
-              <source src="img/hololens1.mp4" type="video/mp4">
-              <img src="img/18.png" alt="MR Patient" />
-            </video>
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>unity</span>
-                  <span>c#</span>
-                  <span>hololens</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/matthewvu2719/MR-Patient" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card web" onclick="openProjectModal({
-                    title: 'ShopFun POS',
-                    description: 'This is a market POS system. User can register, log in, log out, add items to customers cart, check out, print bill, add/delete/edit/get items in inventory. All transactions and customers are recorded',
-                    image: 'img/6.png',
-                    tech: ['mongodb', 'express', 'react', 'node.js'],
-                    github: 'https://github.com/matthewvu2719/ShopFun-POS'
-                  })">
-            <img src="img/5.png" alt="ShopFun POS" />
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>mongodb</span>
-                  <span>express</span>
-                  <span>react</span>
-                  <span>node.js</span>
-
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/matthewvu2719/ShopFun-POS" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
+              <div class="card-overlay">
+                <span class="card-name">Journey</span>
+                <span class="card-arrow">›</span>
               </div>
             </div>
           </div>
 
-          <div class="project-card web" onclick="openProjectModal({
-                    title: 'Student Admin Portal',
-                    description: 'This project is a student portal manager application. User can add student, edit student info, delete student, upload and change profile picture',
-                    image: 'img/29.png',
-                    tech: ['asp.net', 'c#', 'angular'],
-                    github: 'https://github.com/matthewvu2719/Student-Admin-Portal'
-                  })">
-            <img src="img/28.png" alt="Student Admin Portal" />
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>asp.net</span>
-                  <span>c#</span>
-                  <span>angular</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/matthewvu2719/Student-Admin-Portal" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
+          <div class="project-card" data-cat="web" data-index="4">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/testQuest4.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-overlay">
+                <span class="card-name">TestQuest!</span>
+                <span class="card-arrow">›</span>
               </div>
             </div>
           </div>
 
-          <!-- <div class="project-card web">
-            <img src="img/9.png" alt="fifa record" />
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>spring</span>
-                  <span>java</span>
-                </div>
-                <div class="project-links">
-                  <a href="javascript:void(0)" onclick="openProjectModal({
-                    title: 'FIFA World Cup Record',
-                    description: 'This project is used to manage FIFA World Cup records. User can add/edit/delete/get teams\' records, type in the search bar to find results faster, sort records by points, names or continents',
-                    image: 'img/10.png',
-                    tech: ['spring', 'java'],
-                    github: 'https://github.com/matthewvu2719/FIFA-World-Cup-Record'
-                  })"><i class="fas fa-eye"></i></a>
-                  <a href="https://github.com/matthewvu2719/FIFA-World-Cup-Record"><i class="fab fa-github"></i></a>
-                </div>
+          <div class="project-card" data-cat="game" data-index="5">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/lucidsouls2.mp4" type="video/mp4"></video>
               </div>
-            </div>
-          </div> -->
-          
-
-          <div class="project-card game" onclick="openProjectModal({
-                    title: 'BlackJack',
-                    description: 'This project is a BlackJack game application with Vietnamese play style. Player can read rules, enter money amount, enter bet amount, hit, stand, start new round',
-                    image: 'img/11.png',
-                    tech: ['java', 'javafx'],
-                    github: 'https://github.com/matthewvu2719/xidach-BlackJack'
-                  })">
-            <img src="img/11.png" alt="black jack" />
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>java</span>
-                  <span>javafx</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/matthewvu2719/xidach-BlackJack" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
+              <div class="card-overlay">
+                <span class="card-name">Lucid Souls</span>
+                <span class="card-arrow">›</span>
               </div>
             </div>
           </div>
 
-          <div class="project-card game" onclick="openProjectModal({
-                    title: 'Wing Hero',
-                    description: 'This project is mobile game application. User can tap the screen to play. By tapping the Wing Hero will jump. If it hits an enemy, the game is over. The score increased each time the Wing Hero passes a wave of enemies',
-                    image: 'img/34.png',
-                    tech: ['java', 'libgdx'],
-                    github: 'https://github.com/matthewvu2719/Wing-Hero'
-                  })">
-            <img src="img/34.png" alt="wing hero" />
-            <div class="project-info">
-              <div class="project-footer">
-                <div class="tech-tags">
-                  <span>java</span>
-                  <span>libgdx</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/matthewvu2719/Wing-Hero" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                </div>
+          <div class="project-card" data-cat="game" data-index="6">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/adventureTime5.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-overlay">
+                <span class="card-name">Adventure Time</span>
+                <span class="card-arrow">›</span>
               </div>
             </div>
           </div>
-          
 
-          
-        </div>
-      </div>
-    </section>
-    </div><!-- end #tab-projects -->
-
-    <!-- Tab: Experience -->
-    <div id="tab-experience" style="display:none">
-
-    <!-- Education -->
-    <section id="education" class="section">
-      <div class="container">
-        <div class="education-panel">
-          <p class="panel-section-title">Education</p>
-          <div class="education-item">
-            <div class="education-header">
-              <h3>Honours Bachelor of Science in Computer Science</h3>
-              <span class="education-date">Sep. 2024 – May 2026</span>
-            </div>
-            <div class="education-footer">
-              <p class="education-school">York University</p>
-              <span class="education-location">Toronto, ON</span>
+          <div class="project-card" data-cat="game" data-index="7">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/futureshock2.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-overlay">
+                <span class="card-name">Future Shock 2099</span>
+                <span class="card-arrow">›</span>
+              </div>
             </div>
           </div>
 
-          <div class="education-item">
-            <div class="education-header">
-              <h3>Advanced Diploma of Software Development and Network Engineering</h3>
-              <span class="education-date">Sep. 2020 – Dec 2023</span>
-            </div>
-            <div class="education-footer">
-              <p class="education-school">Sheridan College</p>
-              <span class="education-location">Oakville, ON</span>
+          <div class="project-card" data-cat="xr" data-index="8">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <video autoplay muted loop playsinline><source src="img/hololens1.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-overlay">
+                <span class="card-name">MR Patient</span>
+                <span class="card-arrow">›</span>
+              </div>
             </div>
           </div>
+
+          <div class="project-card" data-cat="web" data-index="9">
+            <div class="card-media">
+              <div class="card-media-inner">
+                <img src="img/5.png" alt="ShopFun POS">
+              </div>
+              <div class="card-overlay">
+                <span class="card-name">ShopFun POS</span>
+                <span class="card-arrow">›</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="experience-panel">
-          <p class="panel-section-title">Work</p>
-          <div class="experience-item">
-            <div class="experience-header">
-              <h3>Software Developer</h3>
-              <span class="experience-date">May 2023 – Aug. 2023</span>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="exp-inner">
+        <div class="exp-grid">
+
+          <!-- Work on left -->
+          <div class="exp-col">
+            <h2 class="exp-heading">Work</h2>
+            <div class="work-item">
+              <div class="work-head">
+                <span class="work-role">Software Developer</span>
+                <span class="work-date">May – Aug 2023</span>
+              </div>
+              <p class="work-company">SIRT <span class="work-dot">·</span> Toronto, ON</p>
+              <ul class="work-bullets">
+                <li>Debugged and extracted a 10K+ entry animation dataset using Python, reducing asset integration time by 25%</li>
+                <li>Prototyped gameplay features in Unreal Engine using C++, gaining engine-level systems experience</li>
+              </ul>
             </div>
-            <div class="experience-footer">
-              <p class="experience-company">SIRT</p>
-              <span class="experience-location">Toronto, ON</span>
+            <div class="work-item">
+              <div class="work-head">
+                <span class="work-role">Software Developer</span>
+                <span class="work-date">Jan 2022 – Apr 2023</span>
+              </div>
+              <p class="work-company">Cloud DX <span class="work-dot">·</span> Oakville, ON</p>
+              <ul class="work-bullets">
+                <li>Conducted system integration and testing for the project presentation at Avatar XPrize 2022</li>
+                <li>Built registration workflow, leading to 50% faster component integration into the main project</li>
+                <li>Developed facial recognition to improve detection accuracy and responsiveness by 20%</li>
+                <li>Implemented near/far hand interaction features for the system, optimizing performance by 30%</li>
+                <li>Collaborated with medical and technical stakeholders for iterative design improvements</li>
+              </ul>
             </div>
-            <ul class="experience-details">
-              <li>Debugged and extracted a 10K+ entry animation dataset using Python, reducing asset integration time by 25%</li>
-              <li>Prototyped gameplay features in Unreal Engine using C++, gaining engine-level systems experience</li>
-            </ul>
           </div>
 
-          <div class="experience-item">
-            <div class="experience-header">
-              <h3>Software Developer</h3>
-              <span class="experience-date">Jan. 2022 – April 2023</span>
+          <!-- Education on right -->
+          <div class="exp-col">
+            <h2 class="exp-heading">Education</h2>
+            <div class="edu-item">
+              <div class="edu-head">
+                <span class="edu-degree">BSc Computer Science</span>
+                <span class="edu-date">2024 – 2026</span>
+              </div>
+              <p class="edu-school">York University</p>
+              <p class="edu-loc">Toronto, ON</p>
             </div>
-            <div class="experience-footer">
-              <p class="experience-company">Cloud DX</p>
-              <span class="experience-location">Oakville, ON</span>
+            <div class="edu-item">
+              <div class="edu-head">
+                <span class="edu-degree">Advanced Diploma — Software Dev &amp; Network Eng</span>
+                <span class="edu-date">2020 – 2023</span>
+              </div>
+              <p class="edu-school">Sheridan College</p>
+              <p class="edu-loc">Oakville, ON</p>
             </div>
-            <ul class="experience-details">
-              <li>Conducted system integration and testing for the project presentation at Avatar XPrize 2022</li>
-              <li>Built registration workflow, leading to 50% faster component integration into the main project</li>
-              <li>Developed facial recognition to improve detection accuracy and responsiveness by 20%</li>
-              <li>Implemented near/far hand interaction features for the system, optimizing performance by 30%</li>
-              <li>Collaborated with medical and technical stakeholders for iterative design improvements</li>
-            </ul>
           </div>
+
         </div>
       </div>
     </section>
-    </div><!-- end #tab-experience -->
 
-    <!-- Project Modal -->
-    <div class="project-modal" id="projectModal">
-      <div class="project-modal-content">
-        <button class="project-modal-close" onclick="closeProjectModal()">&times;</button>
-        <div class="project-modal-media" id="modalMedia"></div>
-        <div class="project-modal-body">
-          <h2 class="project-modal-title" id="modalTitle"></h2>
-          <p class="project-modal-description" id="modalDescription"></p>
-          <div class="project-modal-section">
-            <div class="project-modal-tech" id="modalTechAndLinks"></div>
+    <!-- FOOTER -->
+    <!-- <footer>
+      <span>© <span id="footer-year"></span> Matthew Vu</span>
+      <span id="footer-clock"></span>
+      <span>matthewvu2719@gmail.com</span>
+    </footer> -->
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div id="modal-media"></div>
+        <div class="modal-body">
+          <div class="modal-left">
+            <p class="modal-title" id="modal-title"></p>
+            <p class="modal-desc" id="modal-desc"></p>
+          </div>
+          <div class="modal-footer">
+            <div class="modal-tags" id="modal-tags"></div>
+            <div class="modal-links" id="modal-links"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="js/script.js"></script>
   </body>
