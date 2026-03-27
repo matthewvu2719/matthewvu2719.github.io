@@ -82,7 +82,7 @@ var projects = [
   },
   {
     title: 'TestQuest!',
-    desc: 'A gamified study with me web app. User can study using pomodoro sessions, AI generated quizzes and answers, and earn rewards which will be used in the 2D platformer game.',
+    desc: 'A gamified study with me web app for kids. User can study using pomodoro sessions, AI generated quizzes and answers, and earn rewards which will be used in the 2D platformer game.',
     slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4'],
     tech: ['react','nodejs','c#','unity','webgl'],
     demo: 'https://test-quest-zeta.vercel.app',
