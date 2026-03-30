@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // ── CARD CLICKS + TECH TAGS ──
 document.addEventListener('DOMContentLoaded', function () {
-  var MAX_TAGS = 3;
+  var MAX_TAGS = 6;
   document.querySelectorAll('.project-card[data-index]').forEach(function (card) {
     card.addEventListener('click', function () {
       openModal(parseInt(card.dataset.index, 10));
