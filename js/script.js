@@ -87,9 +87,9 @@ var projects = [
   },
   {
     title: 'TestQuest!',
-    desc: 'A gamified study with me web app for kids. User can study using pomodoro sessions, AI generated quizzes and answers, and earn rewards which will be used in the 2D platformer game.',
-    slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4','img/testQuest4.mp4','img/testQuest5.mp4'],
-    tech: ['react','nodejs','c#','unity','webgl'],
+    desc: 'A gamified study with me web app. TestQuest! multi-agent system generate lecture notes, graphs, diagrams, flashcards, mock exams and insights based on test results for any topic user input. User also earn fruits rewards through studying which will be used in the 2D pixel platformer game.',
+    slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4','img/testQuest4.mp4','img/testQuest5.mp4','img/testQuest6.mp4','img/testQuest7.mp4','img/testQuest8.mp4'],
+    tech: ['react','python','fastapi','langgraph','tavily','pinecone','clerk','docker','google cloud run','c#','webgl'],
     demo: 'https://test-quest-zeta.vercel.app',
     github: 'https://github.com/matthewvu2719/TestQuest'
   },
@@ -122,14 +122,6 @@ var projects = [
     slides: ['img/hololens1.mp4','img/hololens2.mp4'],
     tech: ['unity','c#','hololens'],
     github: 'https://github.com/matthewvu2719/MR-Patient'
-  },
-  {
-    title: 'ShopFun POS',
-    desc: 'Full-featured market POS system with user auth, cart management, checkout, inventory CRUD, and complete transaction recording.',
-    slides: [],
-    image: 'img/6.png',
-    tech: ['mongodb','express','react','node.js'],
-    github: 'https://github.com/matthewvu2719/ShopFun-POS'
   }
 ];
 
