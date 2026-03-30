@@ -44,12 +44,74 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// ── CARD CLICKS ──
+// ── CARD CLICKS + TECH TAGS ──
 document.addEventListener('DOMContentLoaded', function () {
+  var MAX_TAGS = 3;
   document.querySelectorAll('.project-card[data-index]').forEach(function (card) {
     card.addEventListener('click', function () {
       openModal(parseInt(card.dataset.index, 10));
     });
+
+    var idx = parseInt(card.dataset.index, 10);
+    var p = projects[idx];
+    if (!p || !p.tech || !p.tech.length) return;
+
+    var tech = p.tech;
+    var techDiv = document.createElement('div');
+    techDiv.className = 'card-tech';
+
+    var nameEl = document.createElement('div');
+    nameEl.className = 'card-name';
+    nameEl.textContent = p.title;
+    techDiv.appendChild(nameEl);
+
+    var tagsRow = document.createElement('div');
+    tagsRow.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:8px';
+    techDiv.appendChild(tagsRow);
+
+    var pillsGroup = document.createElement('div');
+    pillsGroup.style.cssText = 'display:flex;flex-wrap:wrap;gap:5px;align-items:center';
+    tagsRow.appendChild(pillsGroup);
+
+    var shown = tech.slice(0, MAX_TAGS);
+    var rest = tech.length - MAX_TAGS;
+
+    shown.forEach(function (t) {
+      var s = document.createElement('span');
+      s.textContent = t;
+      pillsGroup.appendChild(s);
+    });
+
+    if (rest > 0) {
+      var more = document.createElement('span');
+      more.className = 'card-tech-more';
+      more.textContent = '+' + rest + ' more';
+      pillsGroup.appendChild(more);
+    }
+
+    if (p.demo || p.github) {
+      var linksGroup = document.createElement('div');
+      linksGroup.className = 'card-links';
+      if (p.demo) {
+        var demoA = document.createElement('a');
+        demoA.href = p.demo;
+        demoA.target = '_blank';
+        demoA.innerHTML = '<i class="fas fa-arrow-up-right-from-square"></i>';
+        demoA.onclick = function (e) { e.stopPropagation(); };
+        linksGroup.appendChild(demoA);
+      }
+      if (p.github) {
+        var ghA = document.createElement('a');
+        ghA.href = p.github;
+        ghA.target = '_blank';
+        ghA.innerHTML = '<i class="fab fa-github"></i>';
+        ghA.onclick = function (e) { e.stopPropagation(); };
+        linksGroup.appendChild(ghA);
+      }
+      tagsRow.appendChild(linksGroup);
+    }
+
+    card.appendChild(techDiv);
   });
 });
 
@@ -59,7 +121,7 @@ var projects = [
     title: 'Ren',
     desc: 'Ren turns your new tab into a sushi restaurant that evolves with your habits. Compete with global users or your friends. Log daily habits to grow your streak, unlock restaurant upgrades, and fill your dining room with guests.',
     slides: ['img/ren1.mp4','img/ren2.mp4','img/ren5.mp4','img/ren3.mp4','img/ren4.mp4','img/ren6.mp4'],
-    tech: ['nextjs','react','zustand','supabase','gemini'],
+    tech: ['nextjs','react','gemini','zustand','supabase'],
     demo: 'https://ren-habit.vercel.app/'
   },
   {
@@ -73,7 +135,7 @@ var projects = [
     title: 'Admittree',
     desc: 'A centralized hub for Canadian university programs admission, which feature specialized and personalized roadmap with an actionable checklist and an AI consultant.',
     slides: ['img/admittree1.mp4','img/admittree2.mp4','img/admittree3.mp4','img/admittree4.mp4','img/admittree5.mp4','img/admittree6.mp4','img/admittree7.mp4','img/admittree8.mp4'],
-    tech: ['mongodb','python','react','flask','digitalocean'],
+    tech: ['flask','python','react','mongodb','digitalocean'],
     demo: 'https://github.com/matthewvu2719/admit-tree/tree/consultant',
     github: 'https://github.com/matthewvu2719/admit-tree/tree/consultant'
   },
@@ -81,7 +143,7 @@ var projects = [
     title: 'Journey',
     desc: 'A gamified habit tracker with an AI-powered companion named Bobo that helps users build consistent habits through intelligent obstacle detection, personalized solutions, and achievement-based rewards. Features real-time analytics, smart friction removal, chat bot.',
     slides: ['img/bobo1.mp4','img/bobo2.mp4','img/bobo3.mp4','img/bobo4.mp4','img/bobo5.mp4','img/bobo6.mp4','img/bobo7.mp4','img/bobo8.mp4'],
-    tech: ['supabase','python','react','fastapi','groq','docker'],
+    tech: ['fastapi','python','react','supabase','groq','docker'],
     demo: 'https://github.com/matthewvu2719/Journey',
     github: 'https://github.com/matthewvu2719/Journey'
   },
@@ -89,7 +151,7 @@ var projects = [
     title: 'TestQuest!',
     desc: 'A gamified study with me web app. TestQuest! multi-agent system generate lecture notes, graphs, diagrams, flashcards, mock exams and insights based on test results for any topic user input. User also earn fruits rewards through studying which will be used in the 2D pixel platformer game.',
     slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4','img/testQuest4.mp4','img/testQuest5.mp4','img/testQuest6.mp4','img/testQuest7.mp4','img/testQuest8.mp4'],
-    tech: ['react','python','fastapi','langgraph','tavily','pinecone','clerk','docker','google cloud run','c#','webgl'],
+    tech: ['langgraph','tavily','pinecone','react','python','fastapi','clerk','docker','google cloud run','c#','webgl'],
     demo: 'https://test-quest-zeta.vercel.app',
     github: 'https://github.com/matthewvu2719/TestQuest'
   },
