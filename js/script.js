@@ -151,7 +151,7 @@ var projects = [
     title: 'TestQuest!',
     desc: 'A gamified study with me web app. TestQuest! multi-agent system generate lecture notes, graphs, diagrams, flashcards, mock exams and insights based on test results for any topic user input. User also earn fruits rewards through studying which will be used in the 2D pixel platformer game.',
     slides: ['img/testQuest.mp4','img/testQuest1.mp4','img/testQuest2.mp4','img/testQuest3.mp4','img/testQuest4.mp4','img/testQuest5.mp4','img/testQuest6.mp4','img/testQuest7.mp4','img/testQuest8.mp4'],
-    tech: ['langgraph','tavily','pinecone','react','python','fastapi','clerk','docker','google cloud run','c#','webgl'],
+    tech: ['langgraph','tavily','pinecone','react','python','fastapi','langsmith','clerk','docker','GCP','c#','webgl'],
     demo: 'https://test-quest-zeta.vercel.app',
     github: 'https://github.com/matthewvu2719/TestQuest'
   },
